@@ -41,6 +41,8 @@ coverage.xml
 # Static local files
 app/static/assets/posts/*
 app/static/assets/users/*
+!app/static/assets/posts/.gitkeep
+!app/static/assets/users/.gitkeep
 
 # Local db
 app/*.db
