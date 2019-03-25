@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2> Latest {% if posts.total >= 5 %} 5 {% else %} {{posts.total}} {% endif %} posts by {{ user.username }}</h2>
+    {% for post in posts.items %}
+        {% include 'posts/small_post.html' %}
+    {% endfor %}
+{% endblock %}
+
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit eveniet quisquam odio dolorum consequatur explicabo, eligendi reiciendis temporibus quasi amet, placeat deserunt in laborum, magnam aperiam accusamus cupiditate inventore nam!</div>
+<div>Ut aperiam laudantium quo aliquid nam, eligendi facere, corporis commodi nostrum voluptatum porro soluta possimus nisi natus veniam nulla! Aperiam assumenda laboriosam tenetur unde expedita autem delectus quia, animi quos!</div>
+<div></div>
+<div></div>
+<div></div>

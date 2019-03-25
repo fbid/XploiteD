@@ -1,0 +1,116 @@
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-primary, .btn-primary {
+  background-color: #28306b !important; /* Overrides Bootstrap class*/
+}
+
+.btn-outline-primary {
+    background-color: #fff !important;
+    background-color: transparent !important;
+    color: #28306b !important;
+}
+
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.main-title {
+  padding: .4em 0;
+  border-bottom: 1px solid #444444;
+  margin-bottom: 1.5em;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.pagination {
+    margin-top:1.5em;
+}
+
+footer {
+    margin-top:1.5em;
+    padding: 10px 0;
+}
+
+/* Cards custom styling */
+
+.card {
+    transition: box-shadow .3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 10px 10px 10px rgba(0,0,0,.1)
+}
+
+.card-img img {
+  max-width: 100%;
+}
