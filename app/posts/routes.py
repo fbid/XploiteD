@@ -14,6 +14,7 @@ def new_post():
     form = NewPostForm()
 
     if form.validate_on_submit():
+        new_pic_fname = None
         if form.post_img.data:
             new_pic_fname = save_post_pic(form.post_img.data)
         new_post = Post(image_file=new_pic_fname, title=form.title.data, content=form.content.data, author=current_user)

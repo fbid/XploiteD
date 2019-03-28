@@ -17,13 +17,17 @@ def resize_img(pic, width, height):
     img.thumbnail(output_size)
     return img
 
-def delete_old_pic(f_path):
+def delete_old_pic(f_path, folder_name=None):
     '''Deletes old user picture from filesystem'''
     if f_path == 'default.svg':
         # avoids default user pic removal
         return
 
-    old_pic_path = os.path.join(current_app.root_path, 'static/assets/users', f_path)
+    if not folder_name:
+        old_pic_path = os.path.join(current_app.root_path, 'static/assets/users', f_path)
+    else:
+        old_pic_path = os.path.join(current_app.root_path, 'static/assets',folder_name, f_path)
+
     if os.path.exists(old_pic_path):
         print(f'File: {old_pic_path} succesfully deleted!')
         os.remove(old_pic_path)
