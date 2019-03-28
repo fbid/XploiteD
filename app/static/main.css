@@ -66,6 +66,9 @@ a.article-title:hover {
   height: 25px;
   width: 25px;
   margin-right: 10px;
+  display:block;
+  float:left;
+  background-size:cover !important;
 }
 
 .article-metadata {
@@ -83,11 +86,6 @@ a.article-title:hover {
   width: 25px;
   height: 25px;
   vertical-align: middle;
-}
-
-.account-img {
-    position:relative;
-    min-height:100%;
 }
 
 .avatar-img-wrapper {

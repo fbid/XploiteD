@@ -2,8 +2,7 @@
 {% block content %}
   <div class="content-section">
     <div class="media">
-        <div class="avatar-img-wrapper">
-          <img class="account-img" src="{{ user_avatar }}">
+        <div class="avatar-img-wrapper" style="background:url({{user_avatar}}) no-repeat center">
         </div>
       <div class="media-body">
         <h2 class="account-heading">{{ current_user.username }}</h2>
