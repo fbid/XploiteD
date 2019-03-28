@@ -86,10 +86,17 @@ a.article-title:hover {
 }
 
 .account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
+    position:relative;
+    min-height:100%;
+}
+
+.avatar-img-wrapper {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius:50%;
+    overflow:hidden;
 }
 
 .pagination {

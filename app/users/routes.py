@@ -77,10 +77,9 @@ def profile():
             new_pic_fname = save_new_user_pic(form.picture.data)
             delete_old_pic(current_user.image_file) # delete old user image
             current_user.image_file = new_pic_fname # update user data
-
+        if form.email.data:
+            current_user.email = form.email.data
         current_user.username = form.username.data
-        current_user.email = form.email.data
-        # commit changes to database
         db.session.commit()
         flash('Account info has been updated succesfully', 'success')
         return redirect(url_for('users.profile'))

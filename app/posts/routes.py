@@ -14,8 +14,8 @@ def new_post():
     form = NewPostForm()
 
     if form.validate_on_submit():
-        new_pic_fname = save_post_pic(form.post_img.data)
-
+        if form.post_img.data:
+            new_pic_fname = save_post_pic(form.post_img.data)
         new_post = Post(image_file=new_pic_fname, title=form.title.data, content=form.content.data, author=current_user)
         db.session.add(new_post)
         db.session.commit()
@@ -52,6 +52,9 @@ def edit_post(post_id):
     # Post request when submitting the form from post edit page
     elif request.method == 'POST':
         if form.validate_on_submit():
+            if form.post_img.data:
+                new_pic_fname = save_post_pic(form.post_img.data)
+                post.image_file = new_pic_fname
             post.title = form.title.data
             post.content = form.content.data
             db.session.commit()

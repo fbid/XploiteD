@@ -1,13 +1,16 @@
-FROM alpine:3.8
+FROM alpine:3.7
 
 WORKDIR /app
+COPY requirements.txt .
 
-RUN apk add python3-dev openssl-dev libffi-dev gcc musl-dev \
-    && pip3 install --upgrade pip
-RUN apk add jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev
+RUN \
+  apk add --no-cache python3 postgresql-libs && \
+  apk add --no-cache --virtual .build-deps gcc python3-dev musl-dev postgresql-dev && \
+  apk add --no-cache libffi-dev jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev && \
+  python3 -m pip install -r requirements.txt --no-cache-dir && \
+  apk --purge del .build-deps
 
 COPY . /app
-RUN pip install --no-cache-dir -r requirements.txt
 
 ENTRYPOINT ["python3"]
-CMD ["run.py"]
+CMD ["run.py", "--host=0.0.0.0"]

@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
-from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError, Optional
 from sqlalchemy import func
 from flask_login import current_user
 from app.models.user import User
@@ -47,7 +47,7 @@ class UpdateUserInfoForm(FlaskForm):
     uname_v = [DataRequired(), Length(min=6,max=20)]
     username = StringField('New Username', validators=uname_v)
 
-    email_v = [DataRequired(), Email()]
+    email_v = [Optional(), Email()]
     email = StringField('New Email', validators=email_v)
 
     pic_v = [FileAllowed(['jpg', 'png'])]
