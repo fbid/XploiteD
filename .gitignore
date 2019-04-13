@@ -35,6 +35,10 @@ coverage.xml
 *.log
 *.pot
 
+# pipenv files
+Pipfile
+Pipfile.lock
+
 # OS specific files
 .DS_Store
 
@@ -43,6 +47,3 @@ app/static/assets/posts/*
 app/static/assets/users/*
 !app/static/assets/posts/.gitkeep
 !app/static/assets/users/.gitkeep
-
-# Local db
-app/*.db
